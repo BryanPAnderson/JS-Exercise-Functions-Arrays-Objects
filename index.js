@@ -38,7 +38,7 @@ function addNumbers(num1, num2) {
 function sayGoodbye(name) {
   return `Goodbye, ${name}. Have a great day`;
 }
-sayGoodbye(Bryan);
+
 /**
  * ### Challenge `temperatureCtoF`
  * 
@@ -54,7 +54,7 @@ sayGoodbye(Bryan);
  * Hint 2: There is a very easy way to round numbers in JS. Do a google search to find out how. 
 */
 function temperatureCtoF(celsTemp1) {
-  return celsTemp1 * 9/5 +32 (math.round());
+  return (Math.round(celsTemp1 * 9/5 +32));
 }
 
 temperatureCtoF(24);
@@ -75,8 +75,12 @@ temperatureCtoF(24);
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(temp'F') {
-  return temp(math.round());
+function temperatureInF(temp1, temp2) {
+  if (temp2 = 'F') {
+    return `${temp1}F`;
+  }; if (temp2 = 'C') {
+    return `${temperatureCtoF(temp1)}C`;
+  };
 }
 
 
@@ -97,8 +101,13 @@ function temperatureInF(temp'F') {
  * }
 */
 function makePersonObject(id, name, email) {
-  return 
+  return {
+    id,
+    name, 
+    email
+  }
 }
+makePersonObject(5, "Leia", )
 
 /**
  * ### Challenge `getName`
@@ -113,11 +122,9 @@ function makePersonObject(id, name, email) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
+function getName(object) {
+   return `Hello, my name is ${object.name}`;
 }
-
-
 /**
  * ### Challenge `appleIndex`
  * 
@@ -133,8 +140,12 @@ function getName(/* code here */) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
-  /* code here */
+function appleIndex(object) {
+  for ( let i = 0; i < object.length; i++) {
+    if ( object[i]=='apple'){
+      return i;
+    };
+  };
 }
 
 /**
