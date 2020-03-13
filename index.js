@@ -38,7 +38,7 @@ function addNumbers(num1, num2) {
 function sayGoodbye(name) {
   return `Goodbye, ${name}. Have a great day`;
 }
-
+sayGoodbye('Bryan');
 /**
  * ### Challenge `temperatureCtoF`
  * 
@@ -54,7 +54,7 @@ function sayGoodbye(name) {
  * Hint 2: There is a very easy way to round numbers in JS. Do a google search to find out how. 
 */
 function temperatureCtoF(celsTemp1) {
-  return (Math.round(celsTemp1 * 9/5 +32));
+  return (Math.round(celsTemp1 * 9/5 +32))+"F";
 }
 
 temperatureCtoF(24);
@@ -163,8 +163,16 @@ function appleIndex(object) {
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(array) {
+  let array2 =[];
+  for(let i=0; i<array.length;i++){
+    if (array[i]== 'apple'){
+      array2[i]= true;
+    } else{
+      array2[i]= false;
+    };
+  };
+  return array2;
 }
 
 
@@ -222,7 +230,7 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
-  /* code here */
+  return `This is a ${inventory[index].car_make} ${inventory[index].car_model}`
 }
 
 /**
@@ -236,8 +244,8 @@ function getCarInfoByIndex(inventory, index) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
-  /* code here */
+function getLastCarInfo(inventory) {
+  return `The is a ${inventory[inventory.length-1].car_make} ${inventory[inventory.length-1].car_model}`
 }
 
 /**
@@ -249,8 +257,15 @@ function getLastCarInfo(/* code here */) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
-function getModelYears(/* code here */) {
-  /* code here */
+
+function getModelYears(inventory) {
+  let array2 =[];
+  for(let i=0; i<inventory.length;i++){
+    
+      array2[i]= inventory[i].car_year;
+    
+  };
+  return array2;
 }
 
 /**
@@ -267,8 +282,8 @@ function getModelYears(/* code here */) {
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoById(/* code here */) {
-  /* code here */
+function getCarInfoById(array, number) {
+  return `The is a ${inventory[number-1].car_make} ${inventory[number-1].car_model}`
 }
 
 /**
@@ -285,8 +300,14 @@ function getCarInfoById(/* code here */) {
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
 */
-function getOlderCars(/* code here */) {
-  /* code here */
+function getOlderCars(inventory, max) {
+  let array2 = [];
+  for(let i=0; i<inventory.length; i++){
+    if (inventory[i].car_year <= max ){
+      array2.push(inventory[i]);
+    }
+  };
+  return array2;
 }
 
 /**
